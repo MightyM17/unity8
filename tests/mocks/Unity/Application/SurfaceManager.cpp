@@ -29,15 +29,12 @@
 #define DEBUG_MSG(params) ((void)0)
 #endif
 
-namespace unityapi = lomiri::shell::application;
+namespace lomiriapi = lomiri::shell::application;
 
 SurfaceManager *SurfaceManager::m_instance = nullptr;
 
 SurfaceManager *SurfaceManager::instance()
 {
-    if (m_instance == nullptr) {
-        auto inst = new SurfaceManager();
-    }
     return m_instance;
 }
 
@@ -100,7 +97,7 @@ void SurfaceManager::registerSurface(MirSurface *surface)
 
 }
 
-void SurfaceManager::notifySurfaceCreated(unityapi::MirSurfaceInterface *surface)
+void SurfaceManager::notifySurfaceCreated(lomiriapi::MirSurfaceInterface *surface)
 {
     Q_EMIT surfaceCreated(surface);
 }
@@ -153,7 +150,7 @@ void SurfaceManager::setNewSurfaceHeightIncrement(int value)
     }
 }
 
-void SurfaceManager::raise(unityapi::MirSurfaceInterface *surface)
+void SurfaceManager::raise(lomiriapi::MirSurfaceInterface *surface)
 {
     if (m_underModification)
         return;
@@ -169,7 +166,7 @@ void SurfaceManager::raise(unityapi::MirSurfaceInterface *surface)
     DEBUG_MSG("("<<surface<<") ended");
 }
 
-void SurfaceManager::doRaise(unityapi::MirSurfaceInterface *apiSurface)
+void SurfaceManager::doRaise(lomiriapi::MirSurfaceInterface *apiSurface)
 {
     auto surface = static_cast<MirSurface*>(apiSurface);
     int index = m_surfaces.indexOf(surface);
@@ -179,7 +176,7 @@ void SurfaceManager::doRaise(unityapi::MirSurfaceInterface *apiSurface)
     Q_EMIT surfacesRaised({surface});
 }
 
-void SurfaceManager::activate(unityapi::MirSurfaceInterface *apiSurface)
+void SurfaceManager::activate(lomiriapi::MirSurfaceInterface *apiSurface)
 {
     auto surface = static_cast<MirSurface*>(apiSurface);
 
