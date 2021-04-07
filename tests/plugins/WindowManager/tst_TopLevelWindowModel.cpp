@@ -48,11 +48,11 @@ private:
 void tst_TopLevelWindowModel::init()
 {
     applicationManager = new ApplicationManager;
-    surfaceManager = new SurfaceManager;
+    //surfaceManager = new SurfaceManager;
 
     topLevelWindowModel = new TopLevelWindowModel;
     topLevelWindowModel->setApplicationManager(applicationManager);
-    topLevelWindowModel->setSurfaceManager(surfaceManager);
+    //topLevelWindowModel->setSurfaceManager(surfaceManager);
 }
 
 void tst_TopLevelWindowModel::cleanup()
@@ -60,8 +60,8 @@ void tst_TopLevelWindowModel::cleanup()
     delete topLevelWindowModel;
     topLevelWindowModel = nullptr;
 
-    delete surfaceManager;
-    surfaceManager = nullptr;
+    //delete surfaceManager;
+    //surfaceManager = nullptr;
 
     delete applicationManager;
     applicationManager = nullptr;
@@ -79,7 +79,7 @@ void tst_TopLevelWindowModel::singleSurfaceStartsHidden()
     auto surface = new MirSurface;
     surface->m_state = Mir::HiddenState;
     application->m_surfaceList.addSurface(surface);
-    Q_EMIT surfaceManager->surfaceCreated(surface);
+    //Q_EMIT surfaceManager->surfaceCreated(surface);
 
     QCOMPARE(topLevelWindowModel->rowCount(), 1);
     // not showing the surface as it's still hidden
@@ -103,7 +103,7 @@ void tst_TopLevelWindowModel::secondSurfaceIsHidden()
 
     auto firstSurface = new MirSurface;
     application->m_surfaceList.addSurface(firstSurface);
-    Q_EMIT surfaceManager->surfaceCreated(firstSurface);
+    //Q_EMIT surfaceManager->surfaceCreated(firstSurface);
 
     QCOMPARE(topLevelWindowModel->rowCount(), 1);
     QCOMPARE((void*)topLevelWindowModel->windowAt(0)->surface(), (void*)firstSurface);
@@ -111,7 +111,7 @@ void tst_TopLevelWindowModel::secondSurfaceIsHidden()
     auto secondSurface = new MirSurface;
     secondSurface->m_state = Mir::HiddenState;
     application->m_surfaceList.addSurface(secondSurface);
-    Q_EMIT surfaceManager->surfaceCreated(secondSurface);
+    //Q_EMIT surfaceManager->surfaceCreated(secondSurface);
 
     // still only the first surface is exposed by TopLevelWindowModel
     QCOMPARE(topLevelWindowModel->rowCount(), 1);
