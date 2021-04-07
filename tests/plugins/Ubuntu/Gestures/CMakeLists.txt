@@ -1,13 +1,13 @@
 include(QmlTest)
 
-pkg_check_modules(UBUNTUGESTURES REQUIRED UbuntuGestures)
+pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)
 
 # DANGER! DANGER! Using Qt's private API!
 include_directories(
     SYSTEM
     ${Qt5Quick_PRIVATE_INCLUDE_DIRS}
-    ${UBUNTUGESTURES_INCLUDE_DIRS}
-    ${UBUNTUGESTURES_INCLUDEDIR}/UbuntuGestures/${UBUNTUGESTURES_VERSION}
+    ${LOMIRIGESTURES_INCLUDE_DIRS}
+    ${LOMIRIGESTURES_INCLUDEDIR}/LomiriGestures/${LOMIRIGESTURES_VERSION}
     ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
 )
 
@@ -20,12 +20,12 @@ macro(build_gesture_test CLASSNAME)
     add_executable(${CLASSNAME}TestExec tst_${CLASSNAME}.cpp GestureTest.cpp TestItem.cpp)
     target_link_libraries(${CLASSNAME}TestExec
         Qt5::Test Qt5::Core Qt5::Qml Qt5::Gui Qt5::Quick
-        UbuntuGesturesQml ${UBUNTUGESTURES_LIBRARIES}
+        LomiriGesturesQml ${LOMIRIGESTURES_LIBRARIES}
     )
     install(TARGETS ${CLASSNAME}TestExec
         DESTINATION "${SHELL_PRIVATE_LIBDIR}/tests/plugins/Ubuntu/Gestures"
     )
-    # To find libUbuntuGestures.so
+    # To find libLomiriGestures.so
     set_target_properties(${CLASSNAME}TestExec PROPERTIES INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SHELL_PRIVATE_LIBDIR}")
 endmacro()
 

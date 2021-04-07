@@ -19,7 +19,7 @@
 
 #include "UbuntuGesturesQmlGlobal.h"
 #include "TouchDispatcher.h"
-#include <UbuntuGestures/ubuntugesturesglobal.h>
+#include <LomiriGestures/lomirigesturesglobal.h>
 
 #include <QQuickItem>
 #include <QList>

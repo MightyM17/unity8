@@ -19,7 +19,7 @@
 
 #include <QQuickItem>
 #include <QTouchEvent>
-#include <UbuntuGestures/ubuntugesturesglobal.h>
+#include <LomiriGestures/lomirigesturesglobal.h>
 
 class QQuickView;
 class QTouchDevice;

@@ -16,9 +16,9 @@
 
 #include "TouchGestureArea.h"
 
-#include <UbuntuGestures/private/touchownershipevent_p.h>
-#include <UbuntuGestures/private/touchregistry_p.h>
-#include <UbuntuGestures/private/unownedtouchevent_p.h>
+#include <LomiriGestures/private/touchownershipevent_p.h>
+#include <LomiriGestures/private/touchregistry_p.h>
+#include <LomiriGestures/private/unownedtouchevent_p.h>
 // #include "TouchRegistry.h"
 // #include "UnownedTouchEvent.h"
 

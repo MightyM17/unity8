@@ -83,21 +83,21 @@ pkg_check_modules(LAUNCHER_API REQUIRED lomiri-shell-launcher=13)
 pkg_check_modules(QMENUMODEL REQUIRED qmenumodel)
 pkg_check_modules(GD3 REQUIRED gnome-desktop-3.0)
 pkg_check_modules(UAL REQUIRED lomiri-app-launch-0)
-pkg_check_modules(UBUNTUGESTURES REQUIRED UbuntuGestures)
+pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)
 pkg_check_modules(QTDBUSTEST REQUIRED
     libqtdbustest-1
     libqtdbusmock-1
     )
 
-### Check UbuntuGestures private headers. No pkg-config (.pc) file is provided for them
-find_path(UBUNTUGESTUREPRIV
-    NAMES UbuntuGestures/private/damper_p.h UbuntuGestures/private/ucswipearea_p.h UbuntuGestures/private/ucswipearea_p_p.h
-    PATHS ${UBUNTUGESTURES_INCLUDEDIR}/UbuntuGestures/${UBUNTUGESTURES_VERSION}
+### Check LomiriGestures private headers. No pkg-config (.pc) file is provided for them
+find_path(LOMIRIGESTUREPRIV
+    NAMES LomiriGestures/private/damper_p.h LomiriGestures/private/ucswipearea_p.h LomiriGestures/private/ucswipearea_p_p.h
+    PATHS ${LOMIRIGESTURES_INCLUDEDIR}/LomiriGestures/${LOMIRIGESTURES_VERSION}
     NO_DEFAULT_PATH)
-if (${UBUNTUGESTUREPRIV} STREQUAL UBUNTUGESTUREPRIV-NOTFOUND)
-   message(FATAL_ERROR "UbuntuGestures private headers not found.")
+if (${LOMIRIGESTUREPRIV} STREQUAL LOMIRIGESTUREPRIV-NOTFOUND)
+   message(FATAL_ERROR "LomiriGestures private headers not found.")
 endif()
-# end of UbuntuGesture private headers check
+# end of LomiriGesture private headers check
 
 # Standard install paths
 include(GNUInstallDirs)

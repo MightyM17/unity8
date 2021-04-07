@@ -24,7 +24,7 @@
 // Ubuntu.Gestures plugin
 #include <AxisVelocityCalculator.h>
 #include <Direction.h>
-#include <UbuntuGestures/private/timer_p.h>
+#include <LomiriGestures/private/timer_p.h>
 
 #include <paths.h>
 

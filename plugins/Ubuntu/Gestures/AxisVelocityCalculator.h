@@ -24,7 +24,7 @@
 #include "UbuntuGesturesQmlGlobal.h"
 #include <stdint.h>
 #include <QtCore/QObject>
-#include <UbuntuGestures/private/timesource_p.h>
+#include <LomiriGestures/private/timesource_p.h>
 
 /*
   Estimates the current velocity of a finger based on recent movement along an axis

@@ -59,7 +59,7 @@ void FakeUnityApplicationQmlPlugin::registerTypes(const char *uri)
 
     qmlRegisterSingletonType<ApplicationManager>(uri, 0, 1, "ApplicationManager", applicationManagerSingleton);
     qmlRegisterSingletonType<MirMock>(uri, 0, 1, "Mir", mirSingleton);
-    qmlRegisterType<SurfaceManager>(uri, 0, 1, "SurfaceManager");
+    //qmlRegisterType<SurfaceManager>(uri, 0, 1, "SurfaceManager");
 }
 
 void FakeUnityApplicationQmlPlugin::initializeEngine(QQmlEngine *engine, const char *uri)

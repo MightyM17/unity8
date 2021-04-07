@@ -1,7 +1,7 @@
 # in order to include Qt's private headers
 remove_definitions(-DQT_NO_KEYWORDS)
 
-set(UbuntuGesturesQml_SOURCES
+set(LomiriGesturesQml_SOURCES
     plugin.cpp
     AxisVelocityCalculator.cpp
     Direction.cpp
@@ -12,20 +12,20 @@ set(UbuntuGesturesQml_SOURCES
     TouchGestureArea.cpp
 )
 
-pkg_check_modules(UBUNTUGESTURES REQUIRED UbuntuGestures)
+pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)
 
-add_definitions(-DUBUNTUGESTURESQML_LIBRARY)
+add_definitions(-DLOMIRIGESTURESQML_LIBRARY)
 
-add_library(UbuntuGesturesQml SHARED ${UbuntuGesturesQml_SOURCES})
-target_link_libraries(UbuntuGesturesQml ${UBUNTUGESTURES_LIBRARIES} Qt5::Core Qt5::Quick)
+add_library(LomiriGesturesQml SHARED ${LomiriGesturesQml_SOURCES})
+target_link_libraries(LomiriGesturesQml ${LOMIRIGESTURES_LIBRARIES} Qt5::Core Qt5::Quick)
 
 # So that Foo.cpp can #include "Foo.moc"
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 include_directories(
     SYSTEM
-    ${UBUNTUGESTURES_INCLUDE_DIRS}
-    ${UBUNTUGESTURES_INCLUDEDIR}/UbuntuGestures/${UBUNTUGESTURES_VERSION}
+    ${LOMIRIGESTURES_INCLUDE_DIRS}
+    ${LOMIRIGESTURES_INCLUDEDIR}/LomiriGestures/${LOMIRIGESTURES_VERSION}
 )
 
 # There's no cmake var for v8 include path :-/ so create one
@@ -41,4 +41,4 @@ include_directories(
     ${Qt5V8_PRIVATE_INCLUDE_DIR}
 )
 
-add_unity8_plugin(Ubuntu.Gestures 0.1 Ubuntu/Gestures TARGETS UbuntuGesturesQml)
+add_unity8_plugin(Ubuntu.Gestures 0.1 Ubuntu/Gestures TARGETS LomiriGesturesQml)

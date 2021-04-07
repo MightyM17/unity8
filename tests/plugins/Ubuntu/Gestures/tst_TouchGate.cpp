@@ -26,7 +26,7 @@
 #include <functional>
 
 #include <TouchGate.h>
-#include <UbuntuGestures/private/touchregistry_p.h>
+#include <LomiriGestures/private/touchregistry_p.h>
 
 #include "TestItem.h"
 

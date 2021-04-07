@@ -23,8 +23,8 @@
 #include <QQuickView>
 #include <QtTest>
 
-#include <UbuntuGestures/private/timer_p.h>
-#include <UbuntuGestures/private/touchregistry_p.h>
+#include <LomiriGestures/private/timer_p.h>
+#include <LomiriGestures/private/touchregistry_p.h>
 #include <paths.h>
 
 UG_USE_NAMESPACE

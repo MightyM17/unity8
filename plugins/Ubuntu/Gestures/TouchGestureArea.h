@@ -21,8 +21,8 @@
 
 #include <QQuickItem>
 
-#include <UbuntuGestures/ubuntugesturesglobal.h>
-#include <UbuntuGestures/private/timer_p.h>
+#include <LomiriGestures/lomirigesturesglobal.h>
+#include <LomiriGestures/private/timer_p.h>
 
 UG_FORWARD_DECLARE_CLASS(TouchOwnershipEvent)
 UG_FORWARD_DECLARE_CLASS(UnownedTouchEvent)
