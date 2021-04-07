@@ -30,7 +30,7 @@
 
    Only enable it while needed.
  */
-class UBUNTUGESTURES_EXPORT PressedOutsideNotifier : public QQuickItem {
+class LOMIRIGESTURES_EXPORT PressedOutsideNotifier : public QQuickItem {
     Q_OBJECT
 
 public:
