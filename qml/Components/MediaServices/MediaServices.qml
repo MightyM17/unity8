@@ -16,7 +16,7 @@
 
 import QtQuick 2.4
 import QtMultimedia 5.0
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 
 FocusScope {
     id: root
@@ -347,7 +347,7 @@ FocusScope {
 
         transitions: Transition {
             ParentAnimation {
-                UbuntuNumberAnimation { properties: "x,y,width,implicitHeight"; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { properties: "x,y,width,implicitHeight"; duration: UbuntuAnimation.FastDuration }
             }
         }
     }

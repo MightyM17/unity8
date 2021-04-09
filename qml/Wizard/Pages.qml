@@ -17,7 +17,7 @@
 
 import QtQuick 2.4
 import MeeGo.QOfono 0.2
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Ubuntu.SystemSettings.SecurityPrivacy 1.0
 import Ubuntu.SystemSettings.Update 1.0
 import Ubuntu.Connectivity 1.0
@@ -47,7 +47,7 @@ StyledItem {
     property alias simManager1: simManager1
 
     theme: ThemeSettings {
-        name: "Ubuntu.Components.Themes.Ambiance"
+        name: "Lomiri.Components.Themes.Ambiance"
     }
 
     UbuntuSecurityPrivacyPanel {

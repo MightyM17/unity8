@@ -15,7 +15,7 @@
  */
 
 import QtQuick 2.4
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 
 Rectangle {
     id: root
@@ -38,7 +38,7 @@ Rectangle {
         fontSize: "medium"
         font.weight: Font.Light
         anchors.centerIn: root
-        color: theme.name == "Ubuntu.Components.Themes.SuruDark" ? "#111"
+        color: theme.name == "Lomiri.Components.Themes.SuruDark" ? "#111"
                                                                  : "white"
         visible: text !== ""
     }

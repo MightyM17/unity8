@@ -15,7 +15,7 @@
  */
 
 import QtQuick 2.4
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Unity.Application 0.1
 
 FocusScope {
@@ -302,7 +302,7 @@ FocusScope {
                                      property: "opacity"; value: 0.0 }
                     PropertyAction { target: surfaceContainer
                                      property: "visible"; value: true }
-                    UbuntuNumberAnimation { target: surfaceContainer; property: "opacity";
+                    LomiriNumberAnimation { target: surfaceContainer; property: "opacity";
                                             from: 0.0; to: 1.0
                                             duration: UbuntuAnimation.BriskDuration }
                     ScriptAction { script: {
@@ -320,7 +320,7 @@ FocusScope {
                         splashLoader.active = true;
                         surfaceContainer.visible = true;
                     } }
-                    UbuntuNumberAnimation { target: splashLoader; property: "opacity";
+                    LomiriNumberAnimation { target: splashLoader; property: "opacity";
                                             from: 0.0; to: 1.0
                                             duration: UbuntuAnimation.BriskDuration }
                     PropertyAction { target: surfaceContainer
@@ -335,7 +335,7 @@ FocusScope {
                         d.surfaceOldEnoughToBeResized = false;
                         screenshotImage.visible = true;
                     } }
-                    UbuntuNumberAnimation { target: screenshotImage; property: "opacity";
+                    LomiriNumberAnimation { target: screenshotImage; property: "opacity";
                                             from: 0.0; to: 1.0
                                             duration: UbuntuAnimation.BriskDuration }
                     ScriptAction { script: {
@@ -350,7 +350,7 @@ FocusScope {
                 SequentialAnimation {
                     PropertyAction { target: surfaceContainer
                                      property: "visible"; value: true }
-                    UbuntuNumberAnimation { target: screenshotImage; property: "opacity";
+                    LomiriNumberAnimation { target: screenshotImage; property: "opacity";
                                             from: 1.0; to: 0.0
                                             duration: UbuntuAnimation.BriskDuration }
                     ScriptAction { script: {
@@ -365,7 +365,7 @@ FocusScope {
                 SequentialAnimation {
                     PropertyAction { target: screenshotImage
                                      property: "visible"; value: true }
-                    UbuntuNumberAnimation { target: screenshotImage; property: "opacity";
+                    LomiriNumberAnimation { target: screenshotImage; property: "opacity";
                                             from: 0.0; to: 1.0
                                             duration: UbuntuAnimation.BriskDuration }
                     PropertyAction { target: splashLoader; property: "active"; value: false }
@@ -384,7 +384,7 @@ FocusScope {
                 SequentialAnimation {
                     PropertyAction { target: surfaceContainer; property: "opacity"; value: 0.0 }
                     PropertyAction { target: surfaceContainer; property: "visible"; value: true }
-                    UbuntuNumberAnimation { target: surfaceContainer; property: "opacity";
+                    LomiriNumberAnimation { target: surfaceContainer; property: "opacity";
                                             from: 0.0; to: 1.0
                                             duration: UbuntuAnimation.BriskDuration }
                     ScriptAction { script: {

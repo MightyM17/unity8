@@ -41,4 +41,4 @@ include_directories(
     ${Qt5V8_PRIVATE_INCLUDE_DIR}
 )
 
-add_unity8_plugin(Ubuntu.Gestures 0.1 Ubuntu/Gestures TARGETS LomiriGesturesQml)
+add_unity8_plugin(Lomiri.Gestures 0.1 Lomiri/Gestures TARGETS LomiriGesturesQml)

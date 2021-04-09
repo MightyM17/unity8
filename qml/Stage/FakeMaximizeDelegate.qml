@@ -15,7 +15,7 @@
  */
 
 import QtQuick 2.4
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Utils 0.1 // For EdgeBarrierSettings
 import "../Components/PanelState"
 
@@ -172,62 +172,62 @@ Rectangle {
         priv.processAnimation(amount, fakeMaximizeBottomRightAnimation, isProgress);
     }
 
-    Behavior on opacity { UbuntuNumberAnimation { duration: UbuntuAnimation.BriskDuration } }
-    Behavior on scale { UbuntuNumberAnimation { duration: UbuntuAnimation.BriskDuration } }
+    Behavior on opacity { LomiriNumberAnimation { duration: UbuntuAnimation.BriskDuration } }
+    Behavior on scale { LomiriNumberAnimation { duration: UbuntuAnimation.BriskDuration } }
 
     ParallelAnimation {
         id: fakeMaximizeAnimation
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "x"; duration: UbuntuAnimation.BriskDuration; to: leftMargin }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "y"; duration: UbuntuAnimation.BriskDuration; to: PanelState.panelHeight }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "width"; duration: UbuntuAnimation.BriskDuration; to: appContainerWidth - leftMargin }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "height"; duration: UbuntuAnimation.BriskDuration; to: appContainerHeight }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "x"; duration: UbuntuAnimation.BriskDuration; to: leftMargin }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "y"; duration: UbuntuAnimation.BriskDuration; to: PanelState.panelHeight }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "width"; duration: UbuntuAnimation.BriskDuration; to: appContainerWidth - leftMargin }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "height"; duration: UbuntuAnimation.BriskDuration; to: appContainerHeight }
     }
 
     ParallelAnimation {
         id: fakeMaximizeLeftAnimation
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "x"; duration: UbuntuAnimation.BriskDuration; to: leftMargin }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "y"; duration: UbuntuAnimation.BriskDuration; to: PanelState.panelHeight }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "width"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth - leftMargin)/2 }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "height"; duration: UbuntuAnimation.BriskDuration; to: appContainerHeight - PanelState.panelHeight }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "x"; duration: UbuntuAnimation.BriskDuration; to: leftMargin }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "y"; duration: UbuntuAnimation.BriskDuration; to: PanelState.panelHeight }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "width"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth - leftMargin)/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "height"; duration: UbuntuAnimation.BriskDuration; to: appContainerHeight - PanelState.panelHeight }
     }
 
     ParallelAnimation {
         id: fakeMaximizeRightAnimation
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "x"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth + leftMargin)/2 }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "y"; duration: UbuntuAnimation.BriskDuration; to: PanelState.panelHeight }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "width"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth - leftMargin)/2 }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "height"; duration: UbuntuAnimation.BriskDuration; to: appContainerHeight - PanelState.panelHeight }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "x"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth + leftMargin)/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "y"; duration: UbuntuAnimation.BriskDuration; to: PanelState.panelHeight }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "width"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth - leftMargin)/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "height"; duration: UbuntuAnimation.BriskDuration; to: appContainerHeight - PanelState.panelHeight }
     }
 
     ParallelAnimation {
         id: fakeMaximizeTopLeftAnimation
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "x"; duration: UbuntuAnimation.BriskDuration; to: leftMargin }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "y"; duration: UbuntuAnimation.BriskDuration; to: PanelState.panelHeight }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "width"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth - leftMargin)/2 }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "height"; duration: UbuntuAnimation.BriskDuration; to: (appContainerHeight - PanelState.panelHeight)/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "x"; duration: UbuntuAnimation.BriskDuration; to: leftMargin }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "y"; duration: UbuntuAnimation.BriskDuration; to: PanelState.panelHeight }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "width"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth - leftMargin)/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "height"; duration: UbuntuAnimation.BriskDuration; to: (appContainerHeight - PanelState.panelHeight)/2 }
     }
 
     ParallelAnimation {
         id: fakeMaximizeTopRightAnimation
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "x"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth + leftMargin)/2 }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "y"; duration: UbuntuAnimation.BriskDuration; to: PanelState.panelHeight }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "width"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth - leftMargin)/2 }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "height"; duration: UbuntuAnimation.BriskDuration; to: (appContainerHeight - PanelState.panelHeight)/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "x"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth + leftMargin)/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "y"; duration: UbuntuAnimation.BriskDuration; to: PanelState.panelHeight }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "width"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth - leftMargin)/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "height"; duration: UbuntuAnimation.BriskDuration; to: (appContainerHeight - PanelState.panelHeight)/2 }
     }
 
     ParallelAnimation {
         id: fakeMaximizeBottomLeftAnimation
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "x"; duration: UbuntuAnimation.BriskDuration; to: leftMargin }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "y"; duration: UbuntuAnimation.BriskDuration; to: (appContainerHeight + PanelState.panelHeight)/2 }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "width"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth - leftMargin)/2 }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "height"; duration: UbuntuAnimation.BriskDuration; to: appContainerHeight/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "x"; duration: UbuntuAnimation.BriskDuration; to: leftMargin }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "y"; duration: UbuntuAnimation.BriskDuration; to: (appContainerHeight + PanelState.panelHeight)/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "width"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth - leftMargin)/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "height"; duration: UbuntuAnimation.BriskDuration; to: appContainerHeight/2 }
     }
 
     ParallelAnimation {
         id: fakeMaximizeBottomRightAnimation
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "x"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth + leftMargin)/2 }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "y"; duration: UbuntuAnimation.BriskDuration; to: (appContainerHeight + PanelState.panelHeight)/2 }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "width"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth - leftMargin)/2 }
-        UbuntuNumberAnimation { target: fakeRectangle; properties: "height"; duration: UbuntuAnimation.BriskDuration; to: appContainerHeight/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "x"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth + leftMargin)/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "y"; duration: UbuntuAnimation.BriskDuration; to: (appContainerHeight + PanelState.panelHeight)/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "width"; duration: UbuntuAnimation.BriskDuration; to: (appContainerWidth - leftMargin)/2 }
+        LomiriNumberAnimation { target: fakeRectangle; properties: "height"; duration: UbuntuAnimation.BriskDuration; to: appContainerHeight/2 }
     }
 }

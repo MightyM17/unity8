@@ -16,7 +16,7 @@
  */
 
 import QtQuick 2.4
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import "../Components"
 
 Item {
@@ -209,7 +209,7 @@ Item {
         width: currentItem ? currentItem.width : 0
         Behavior on width {
             enabled: !d.firstItemSwitch && expanded
-            UbuntuNumberAnimation { duration: UbuntuAnimation.FastDuration; easing: UbuntuAnimation.StandardEasing }
+            LomiriNumberAnimation { duration: UbuntuAnimation.FastDuration; easing: UbuntuAnimation.StandardEasing }
         }
 
         // micromovements of the highlight line when user moves the finger across the items while pulling

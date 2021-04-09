@@ -15,7 +15,7 @@
 */
 
 import QtQuick 2.4
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 
 StateGroup {
     id: root
@@ -43,7 +43,7 @@ StateGroup {
             SequentialAnimation {
                 // clip so we don't go out of parent's bounds during spread
                 PropertyAction { target: root.container.parent; property: "clip"; value: true }
-                UbuntuNumberAnimation { target: root.surfaceItem; property: "anchors.topMargin"; to: root.container.height
+                LomiriNumberAnimation { target: root.surfaceItem; property: "anchors.topMargin"; to: root.container.height
                                         duration: UbuntuAnimation.BriskDuration }
                 PropertyAction { target: root.surfaceItem; property: "visible"; value: false }
                 PropertyAction { target: container.parent; property: "clip"; value: false }
@@ -63,7 +63,7 @@ StateGroup {
                 ScriptAction { script: {
                     root.surfaceItem.visible = true;
                 } }
-                UbuntuNumberAnimation {
+                LomiriNumberAnimation {
                     target: root.surfaceItem; property: "anchors.topMargin"; from: root.container.height; to: 0
                     duration: UbuntuAnimation.BriskDuration
                 }

@@ -16,7 +16,7 @@
 
 import QtQuick 2.4
 import QtQuick.Layouts 1.1
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Unity.Application 0.1
 import "../Components"
 import "../Components/PanelState"
@@ -93,7 +93,7 @@ MouseArea {
             rightMargin: units.gu(1)
         }
         Behavior on anchors.leftMargin {
-            UbuntuNumberAnimation {}
+            LomiriNumberAnimation {}
         }
 
         spacing: units.gu(3)
@@ -129,7 +129,7 @@ MouseArea {
                 elide: Text.ElideRight
                 opacity: overlayShown || menuBarLoader.visible ? 0 : 1
                 visible: opacity != 0
-                Behavior on opacity { UbuntuNumberAnimation {} }
+                Behavior on opacity { LomiriNumberAnimation {} }
             }
 
             Loader {
@@ -156,7 +156,7 @@ MouseArea {
 
                 opacity: (!overlayShown && priv.shouldShowMenus) || (active && priv.menuBar.valid && root.windowMoving) ? 1 : 0
                 visible: opacity == 1
-                Behavior on opacity { UbuntuNumberAnimation {} }
+                Behavior on opacity { LomiriNumberAnimation {} }
             }
         }
     }

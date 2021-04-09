@@ -16,8 +16,8 @@
 
 import QtQuick 2.4
 import "../Components"
-import Ubuntu.Components 1.3
-import Ubuntu.Gestures 0.1
+import Lomiri.Components 1.3
+import Lomiri.Gestures 0.1
 import Unity.Launcher 0.1
 import Utils 0.1 as Utils
 
@@ -311,7 +311,7 @@ FocusScope {
                 panel.layer.enabled = true
             }
         }
-        UbuntuNumberAnimation {
+        LomiriNumberAnimation {
             target: panel
             property: "opacity"
             easing.type: Easing.InQuad

@@ -16,7 +16,7 @@
 
 import QtQuick 2.4
 import QtQuick.Layouts 1.1
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
 import Unity.Screens 0.1
 import UInput 0.1
@@ -192,7 +192,7 @@ Item {
             onPressed: uinput.pressMouse(UInput.ButtonLeft);
             onReleased: uinput.releaseMouse(UInput.ButtonLeft);
             property bool highlight: false
-            UbuntuShape {
+            LomiriShape {
                 anchors.fill: parent
                 backgroundColor: leftButton.highlight || leftButton.pressed ? UbuntuColors.ash : UbuntuColors.inkstone
                 Behavior on backgroundColor { ColorAnimation { duration: UbuntuAnimation.FastDuration } }
@@ -207,7 +207,7 @@ Item {
             onPressed: uinput.pressMouse(UInput.ButtonRight);
             onReleased: uinput.releaseMouse(UInput.ButtonRight);
             property bool highlight: false
-            UbuntuShape {
+            LomiriShape {
                 anchors.fill: parent
                 backgroundColor: rightButton.highlight || rightButton.pressed ? UbuntuColors.ash : UbuntuColors.inkstone
                 Behavior on backgroundColor { ColorAnimation { duration: UbuntuAnimation.FastDuration } }
@@ -315,17 +315,17 @@ Item {
         PropertyAction { targets: [leftButton, rightButton, oskButton]; property: "enabled"; value: false }
         PropertyAction { targets: [leftButton, rightButton, oskButton]; property: "opacity"; value: 0 }
         PropertyAction { target: tutorialLabel; property: "text"; value: i18n.tr("Your device is now connected to an external display. Use this screen as a touch pad to interact with the pointer.") }
-        UbuntuNumberAnimation { targets: [tutorialLabel, tutorialImage]; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
+        LomiriNumberAnimation { targets: [tutorialLabel, tutorialImage]; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
         PropertyAction { target: tutorial; property: "paused"; value: true }
         PauseAnimation { duration: 500 } // it takes a bit until pausing actually takes effect
-        UbuntuNumberAnimation { targets: [tutorialLabel, tutorialImage]; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
+        LomiriNumberAnimation { targets: [tutorialLabel, tutorialImage]; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
 
-        UbuntuNumberAnimation { target: leftButton; property: "opacity"; to: 1 }
-        UbuntuNumberAnimation { target: rightButton; property: "opacity"; to: 1 }
+        LomiriNumberAnimation { target: leftButton; property: "opacity"; to: 1 }
+        LomiriNumberAnimation { target: rightButton; property: "opacity"; to: 1 }
 
         PauseAnimation { duration: UbuntuAnimation.SleepyDuration }
         PropertyAction { target: tutorialLabel; property: "text"; value: i18n.tr("Tap left button to click.") }
-        UbuntuNumberAnimation { target: tutorialLabel; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
+        LomiriNumberAnimation { target: tutorialLabel; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
         SequentialAnimation {
             loops: 2
             PropertyAction { target: leftButton; property: "highlight"; value: true }
@@ -333,11 +333,11 @@ Item {
             PropertyAction { target: leftButton; property: "highlight"; value: false }
             PauseAnimation { duration: UbuntuAnimation.SleepyDuration }
         }
-        UbuntuNumberAnimation { target: tutorialLabel; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
+        LomiriNumberAnimation { target: tutorialLabel; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
 
         PauseAnimation { duration: UbuntuAnimation.SleepyDuration }
         PropertyAction { target: tutorialLabel; property: "text"; value: i18n.tr("Tap right button to right click.") }
-        UbuntuNumberAnimation { target: tutorialLabel; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
+        LomiriNumberAnimation { target: tutorialLabel; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
         SequentialAnimation {
             loops: 2
             PropertyAction { target: rightButton; property: "highlight"; value: true }
@@ -345,60 +345,60 @@ Item {
             PropertyAction { target: rightButton; property: "highlight"; value: false }
             PauseAnimation { duration: UbuntuAnimation.SleepyDuration }
         }
-        UbuntuNumberAnimation { target: tutorialLabel; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
+        LomiriNumberAnimation { target: tutorialLabel; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
 
         PauseAnimation { duration: UbuntuAnimation.SleepyDuration }
         PropertyAction { target: tutorialLabel; property: "text"; value: i18n.tr("Swipe with two fingers to scroll.") }
-        UbuntuNumberAnimation { target: tutorialLabel; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
+        LomiriNumberAnimation { target: tutorialLabel; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
         PropertyAction { target: tutorialFinger1; property: "x"; value: root.width / 2 - tutorialFinger1.width - internalGu * 1 }
         PropertyAction { target: tutorialFinger2; property: "x"; value: root.width / 2 + tutorialFinger1.width + internalGu * 1 - tutorialFinger2.width }
         PropertyAction { target: tutorialFinger1; property: "y"; value: root.height / 2 - internalGu * 10 }
         PropertyAction { target: tutorialFinger2; property: "y"; value: root.height / 2 - internalGu * 10 }
         SequentialAnimation {
             ParallelAnimation {
-                UbuntuNumberAnimation { target: tutorialFinger1; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
-                UbuntuNumberAnimation { target: tutorialFinger2; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
-                UbuntuNumberAnimation { target: tutorialFinger1; property: "scale"; from: 0; to: 1; duration: UbuntuAnimation.FastDuration }
-                UbuntuNumberAnimation { target: tutorialFinger2; property: "scale"; from: 0; to: 1; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger1; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger2; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger1; property: "scale"; from: 0; to: 1; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger2; property: "scale"; from: 0; to: 1; duration: UbuntuAnimation.FastDuration }
             }
             ParallelAnimation {
-                UbuntuNumberAnimation { target: tutorialFinger1; property: "y"; to: root.height / 2 + internalGu * 10; duration: UbuntuAnimation.SleepyDuration }
-                UbuntuNumberAnimation { target: tutorialFinger2; property: "y"; to: root.height / 2 + internalGu * 10; duration: UbuntuAnimation.SleepyDuration }
+                LomiriNumberAnimation { target: tutorialFinger1; property: "y"; to: root.height / 2 + internalGu * 10; duration: UbuntuAnimation.SleepyDuration }
+                LomiriNumberAnimation { target: tutorialFinger2; property: "y"; to: root.height / 2 + internalGu * 10; duration: UbuntuAnimation.SleepyDuration }
             }
             ParallelAnimation {
-                UbuntuNumberAnimation { target: tutorialFinger1; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
-                UbuntuNumberAnimation { target: tutorialFinger2; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
-                UbuntuNumberAnimation { target: tutorialFinger1; property: "scale"; from: 1; to: 0; duration: UbuntuAnimation.FastDuration }
-                UbuntuNumberAnimation { target: tutorialFinger2; property: "scale"; from: 1; to: 0; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger1; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger2; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger1; property: "scale"; from: 1; to: 0; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger2; property: "scale"; from: 1; to: 0; duration: UbuntuAnimation.FastDuration }
             }
             PauseAnimation { duration: UbuntuAnimation.SlowDuration }
             ParallelAnimation {
-                UbuntuNumberAnimation { target: tutorialFinger1; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
-                UbuntuNumberAnimation { target: tutorialFinger2; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
-                UbuntuNumberAnimation { target: tutorialFinger1; property: "scale"; from: 0; to: 1; duration: UbuntuAnimation.FastDuration }
-                UbuntuNumberAnimation { target: tutorialFinger2; property: "scale"; from: 0; to: 1; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger1; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger2; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger1; property: "scale"; from: 0; to: 1; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger2; property: "scale"; from: 0; to: 1; duration: UbuntuAnimation.FastDuration }
             }
             ParallelAnimation {
-                UbuntuNumberAnimation { target: tutorialFinger1; property: "y"; to: root.height / 2 - internalGu * 10; duration: UbuntuAnimation.SleepyDuration }
-                UbuntuNumberAnimation { target: tutorialFinger2; property: "y"; to: root.height / 2 - internalGu * 10; duration: UbuntuAnimation.SleepyDuration }
+                LomiriNumberAnimation { target: tutorialFinger1; property: "y"; to: root.height / 2 - internalGu * 10; duration: UbuntuAnimation.SleepyDuration }
+                LomiriNumberAnimation { target: tutorialFinger2; property: "y"; to: root.height / 2 - internalGu * 10; duration: UbuntuAnimation.SleepyDuration }
             }
             ParallelAnimation {
-                UbuntuNumberAnimation { target: tutorialFinger1; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
-                UbuntuNumberAnimation { target: tutorialFinger2; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
-                UbuntuNumberAnimation { target: tutorialFinger1; property: "scale"; from: 1; to: 0; duration: UbuntuAnimation.FastDuration }
-                UbuntuNumberAnimation { target: tutorialFinger2; property: "scale"; from: 1; to: 0; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger1; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger2; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger1; property: "scale"; from: 1; to: 0; duration: UbuntuAnimation.FastDuration }
+                LomiriNumberAnimation { target: tutorialFinger2; property: "scale"; from: 1; to: 0; duration: UbuntuAnimation.FastDuration }
             }
             PauseAnimation { duration: UbuntuAnimation.SlowDuration }
         }
-        UbuntuNumberAnimation { target: tutorialLabel; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
+        LomiriNumberAnimation { target: tutorialLabel; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
 
         PauseAnimation { duration: UbuntuAnimation.SleepyDuration }
         PropertyAction { target: tutorialLabel; property: "text"; value: i18n.tr("Find more settings in the system settings.") }
-        UbuntuNumberAnimation { target: tutorialLabel; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
+        LomiriNumberAnimation { target: tutorialLabel; property: "opacity"; to: 1; duration: UbuntuAnimation.FastDuration }
         PauseAnimation { duration: 2000 }
-        UbuntuNumberAnimation { target: tutorialLabel; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
+        LomiriNumberAnimation { target: tutorialLabel; property: "opacity"; to: 0; duration: UbuntuAnimation.FastDuration }
 
-        UbuntuNumberAnimation { target: oskButton; property: "opacity"; to: 1 }
+        LomiriNumberAnimation { target: oskButton; property: "opacity"; to: 1 }
         PropertyAction { targets: [leftButton, rightButton, oskButton]; property: "enabled"; value: true }
 
         PropertyAction { target: settings; property: "touchpadTutorialHasRun"; value: true }

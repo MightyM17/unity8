@@ -16,8 +16,8 @@
  */
 
 import QtQuick 2.4
-import Ubuntu.Components 1.3
-import Ubuntu.Layouts 1.0
+import Lomiri.Components 1.3
+import Lomiri.Layouts 1.0
 import Unity.Application 0.1
 import Unity.Indicators 0.1
 import Utils 0.1
@@ -198,7 +198,7 @@ Item {
                     height: indicators.minimizedPanelHeight
                     opacity: d.showWindowDecorationControls ? 1 : 0
                     visible: opacity != 0
-                    Behavior on opacity { UbuntuNumberAnimation { duration: UbuntuAnimation.SnapDuration } }
+                    Behavior on opacity { LomiriNumberAnimation { duration: UbuntuAnimation.SnapDuration } }
 
                     active: PanelState.decorationsVisible || PanelState.decorationsAlwaysVisible
                     windowIsMaximized: true
@@ -215,7 +215,7 @@ Item {
                     enabled: d.enablePointerMenu
                     opacity: d.showPointerMenu ? 1 : 0
                     visible: opacity != 0
-                    Behavior on opacity { UbuntuNumberAnimation { duration: UbuntuAnimation.SnapDuration } }
+                    Behavior on opacity { LomiriNumberAnimation { duration: UbuntuAnimation.SnapDuration } }
                     active: d.showPointerMenu && !callHint.visible
 
                     width: parent.width - windowControlButtons.width - units.gu(2) - __indicators.barWidth
@@ -322,7 +322,7 @@ Item {
             enabled: d.enableTouchMenus
             opacity: d.showTouchMenu ? 1 : 0
             visible: opacity != 0
-            Behavior on opacity { UbuntuNumberAnimation { duration: UbuntuAnimation.SnapDuration } }
+            Behavior on opacity { LomiriNumberAnimation { duration: UbuntuAnimation.SnapDuration } }
 
             onEnabledChanged: {
                 if (!enabled) hide();
@@ -429,11 +429,11 @@ Item {
                 menuObjectPath: indicatorProperties.menuObjectPath
 
                 opacity: hidden ? 0.0 : 1.0
-                Behavior on opacity { UbuntuNumberAnimation { duration: UbuntuAnimation.SnapDuration } }
+                Behavior on opacity { LomiriNumberAnimation { duration: UbuntuAnimation.SnapDuration } }
 
                 width: ((expanded || indicatorVisible) && !hideSessionIndicator && !hideKeyboardIndicator) ? implicitWidth : 0
 
-                Behavior on width { UbuntuNumberAnimation { duration: UbuntuAnimation.SnapDuration } }
+                Behavior on width { LomiriNumberAnimation { duration: UbuntuAnimation.SnapDuration } }
             }
 
             pageDelegate: PanelMenuPage {
@@ -463,7 +463,7 @@ Item {
 
             enabled: !applicationMenus.expanded
             opacity: !callHint.visible && !applicationMenus.expanded ? 1 : 0
-            Behavior on opacity { UbuntuNumberAnimation { duration: UbuntuAnimation.SnapDuration } }
+            Behavior on opacity { LomiriNumberAnimation { duration: UbuntuAnimation.SnapDuration } }
 
             onEnabledChanged: {
                 if (!enabled) hide();
@@ -512,11 +512,11 @@ Item {
     transitions: [
         Transition {
             to: "onscreen"
-            UbuntuNumberAnimation { target: panelArea; properties: "anchors.topMargin,opacity" }
+            LomiriNumberAnimation { target: panelArea; properties: "anchors.topMargin,opacity" }
         },
         Transition {
             to: "offscreen"
-            UbuntuNumberAnimation { target: panelArea; properties: "anchors.topMargin,opacity" }
+            LomiriNumberAnimation { target: panelArea; properties: "anchors.topMargin,opacity" }
         }
     ]
 }

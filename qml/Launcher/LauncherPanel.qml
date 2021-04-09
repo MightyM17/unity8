@@ -16,9 +16,9 @@
 
 import QtQuick 2.4
 import QtQml.StateMachine 1.0 as DSM
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Unity.Launcher 0.1
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.Popups 1.3
 import Utils 0.1
 import "../Components"
 
@@ -200,21 +200,21 @@ Rectangle {
                     property bool draggingTransitionRunning: false
                     property int scheduledMoveTo: -1
 
-                    UbuntuNumberAnimation {
+                    LomiriNumberAnimation {
                         id: snapToBottomAnimation
                         target: launcherListView
                         property: "contentY"
                         to: launcherListView.originY + launcherListView.topMargin
                     }
 
-                    UbuntuNumberAnimation {
+                    LomiriNumberAnimation {
                         id: snapToTopAnimation
                         target: launcherListView
                         property: "contentY"
                         to: launcherListView.contentHeight - launcherListView.height + launcherListView.originY - launcherListView.topMargin
                     }
 
-                    UbuntuNumberAnimation {
+                    LomiriNumberAnimation {
                         id: moveAnimation
                         objectName: "moveAnimation"
                         target: launcherListView
@@ -277,7 +277,7 @@ Rectangle {
                             PropertyAction { target: root; property: "visible"; value: (launcher.visibleWidth === 0) ? 1 : 0 }
                             PropertyAction { target: launcherListViewItem; property: "clip"; value: 0 }
 
-                            UbuntuNumberAnimation {
+                            LomiriNumberAnimation {
                                 target: launcherDelegate
                                 alwaysRunToEnd: true
                                 loops: 1
@@ -287,7 +287,7 @@ Rectangle {
                             }
 
                             // hiding
-                            UbuntuNumberAnimation {
+                            LomiriNumberAnimation {
                                 target: launcherDelegate
                                 alwaysRunToEnd: true
                                 loops: 1
@@ -374,13 +374,13 @@ Rectangle {
                                 from: "*"
                                 to: "expanded"
                                 NumberAnimation { properties: "itemOpacity"; duration: UbuntuAnimation.FastDuration }
-                                UbuntuNumberAnimation { properties: "angle,offset" }
+                                LomiriNumberAnimation { properties: "angle,offset" }
                             },
                             Transition {
                                 from: "expanded"
                                 to: ""
                                 NumberAnimation { properties: "itemOpacity"; duration: UbuntuAnimation.BriskDuration }
-                                UbuntuNumberAnimation { properties: "angle,offset" }
+                                LomiriNumberAnimation { properties: "angle,offset" }
                             },
                             Transition {
                                 id: draggingTransition
@@ -389,7 +389,7 @@ Rectangle {
                                 SequentialAnimation {
                                     PropertyAction { target: launcherListView; property: "draggingTransitionRunning"; value: true }
                                     ParallelAnimation {
-                                        UbuntuNumberAnimation { properties: "height" }
+                                        LomiriNumberAnimation { properties: "height" }
                                         NumberAnimation { target: dropIndicator; properties: "opacity"; duration: UbuntuAnimation.FastDuration }
                                     }
                                     ScriptAction {
@@ -411,7 +411,7 @@ Rectangle {
                                 NumberAnimation { properties: "itemOpacity"; duration: UbuntuAnimation.BriskDuration }
                                 SequentialAnimation {
                                     ScriptAction { script: if (index == launcherListView.count-1) launcherListView.flick(0, -launcherListView.clickFlickSpeed); }
-                                    UbuntuNumberAnimation { properties: "height" }
+                                    LomiriNumberAnimation { properties: "height" }
                                     ScriptAction { script: if (index == launcherListView.count-1) launcherListView.flick(0, -launcherListView.clickFlickSpeed); }
                                     PropertyAction { target: dndArea; property: "postDragging"; value: false }
                                     PropertyAction { target: dndArea; property: "draggedIndex"; value: -1 }
@@ -656,7 +656,7 @@ Rectangle {
                     fakeDragItemAnimation.start();
                 }
 
-                UbuntuNumberAnimation {
+                LomiriNumberAnimation {
                     id: fakeDragItemAnimation
                     target: fakeDragItem;
                     properties: "angle,offset";
@@ -666,20 +666,20 @@ Rectangle {
         }
     }
 
-    UbuntuShape {
+    LomiriShape {
         id: quickListShape
         objectName: "quickListShape"
         anchors.fill: quickList
         opacity: quickList.state === "open" ? 0.95 : 0
         visible: opacity > 0
         rotation: root.rotation
-        aspect: UbuntuShape.Flat
+        aspect: LomiriShape.Flat
 
         // Denotes that the shape is not animating, to prevent race conditions during testing
         readonly property bool ready: (visible && (!quickListShapeOpacityFade.running))
 
         Behavior on opacity {
-            UbuntuNumberAnimation {
+            LomiriNumberAnimation {
                 id: quickListShapeOpacityFade
             }
         }
