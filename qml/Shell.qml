@@ -286,15 +286,15 @@ StyledItem {
         width: parent.width
         height: parent.height
 
-        SurfaceManager {
+        /*SurfaceManager {
             id: surfaceMan
             objectName: "surfaceManager"
-        }
+        }*/
         TopLevelWindowModel {
             id: topLevelSurfaceList
             objectName: "topLevelSurfaceList"
             applicationManager: ApplicationManager // it's a singleton
-            surfaceManager: surfaceMan
+            //surfaceManager: surfaceMan
         }
 
         Stage {
