@@ -19,7 +19,7 @@
  */
 
 import QtQuick 2.4
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Ubuntu.Settings.Menus 0.1 as Menus
 import QMenuModel 0.1 as QMenuModel
 import Utils 0.1 as Utils

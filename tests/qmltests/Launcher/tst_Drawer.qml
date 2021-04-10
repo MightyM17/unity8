@@ -16,7 +16,7 @@
 
 import QtQuick 2.4
 import QtQuick.Layouts 1.1
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import ".."
 import "../../../qml/Launcher"
 import Unity.Launcher 0.1
@@ -25,14 +25,14 @@ import Unity.Test 0.1
 
 StyledItem {
     id: root
-    theme.name: "Ubuntu.Components.Themes.SuruDark"
+    theme.name: "Lomiri.Components.Themes.SuruDark"
     focus: true
 
     width: units.gu(140)
     height: units.gu(70)
     Rectangle {
         anchors.fill: parent
-        color: UbuntuColors.graphite // something neither white nor black
+        color: LomiriColors.graphite // something neither white nor black
     }
 
     Launcher {

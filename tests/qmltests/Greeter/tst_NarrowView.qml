@@ -20,7 +20,7 @@ import ".."
 import "../../../qml/Greeter"
 import LightDMController 0.1
 import LightDM.FullLightDM 0.1 as LightDM
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Ubuntu.Telephony 0.1 as Telephony
 import Unity.Test 0.1 as UT
 
@@ -29,7 +29,7 @@ Item {
     width: units.gu(90)
     height: units.gu(80)
 
-    Component.onCompleted: theme.name = "Ubuntu.Components.Themes.SuruDark" // use the same theme as the real shell
+    Component.onCompleted: theme.name = "Lomiri.Components.Themes.SuruDark" // use the same theme as the real shell
 
     Binding {
         target: LightDMController

@@ -22,7 +22,7 @@
 #include <QSqlError>
 #include <QSqlResult>
 #include <QRect>
-#include <unity/shell/application/ApplicationInfoInterface.h>
+#include <lomiri/shell/application/ApplicationInfoInterface.h>
 
 QMutex WindowStateStorage::s_mutex;
 

@@ -16,7 +16,7 @@
 
 import QtQuick 2.4
 import QtQuick.Layouts 1.1
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Wizard 0.1
 import Ubuntu.SystemSettings.TimeDate 1.1
 import Utils 0.1 as Utils

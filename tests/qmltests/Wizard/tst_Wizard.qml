@@ -19,7 +19,7 @@ import QtTest 1.0
 import AccountsService 0.1
 import MeeGo.QOfono 0.2
 import QMenuModel 0.1
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Ubuntu.Connectivity 1.0
 import Ubuntu.SystemSettings.SecurityPrivacy 1.0
 import Ubuntu.SystemSettings.Update 1.0

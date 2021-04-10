@@ -19,7 +19,7 @@
 #include <QMutex>
 
 // unity-api
-#include <unity/shell/application/Mir.h>
+#include <lomiri/shell/application/Mir.h>
 
 class WindowStateStorage: public QObject
 {

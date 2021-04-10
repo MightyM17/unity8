@@ -19,8 +19,8 @@ import QtTest 1.0
 import AccountsService 0.1
 import LightDMController 0.1
 import LightDM.FullLightDM 0.1 as LightDM
-import Ubuntu.Components 1.3
-import Ubuntu.Components.ListItems 1.3
+import Lomiri.Components 1.3
+import Lomiri.Components.ListItems 1.3
 import Ubuntu.Telephony 0.1 as Telephony
 import Unity.Application 0.1
 import Unity.Notifications 1.0
@@ -32,7 +32,7 @@ import "../../../qml/Components"
 
 Rectangle {
     id: root
-    color: UbuntuColors.lightGrey
+    color: LomiriColors.lightGrey
     width: units.gu(100) + buttons.width
     height: units.gu(71)
 
@@ -151,7 +151,7 @@ Rectangle {
 
     Rectangle {
         id: buttons
-        color: UbuntuColors.darkGrey
+        color: LomiriColors.darkGrey
         width: units.gu(30)
         anchors.top: root.top
         anchors.bottom: root.bottom

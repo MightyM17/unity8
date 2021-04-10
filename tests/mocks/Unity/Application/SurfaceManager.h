@@ -19,7 +19,7 @@
 
 #include <QObject>
 
-#include <unity/shell/application/SurfaceManagerInterface.h>
+#include <lomiri/shell/application/SurfaceManagerInterface.h>
 #include <miral/window.h>
 
 #include "MirSurface.h"
@@ -34,7 +34,7 @@ struct WindowWrapper {
 };
 uint qHash(const WindowWrapper &key, uint seed = 0);
 
-class SurfaceManager : public unity::shell::application::SurfaceManagerInterface
+class SurfaceManager : public lomiri::shell::application::SurfaceManagerInterface
 {
     Q_OBJECT
     Q_PROPERTY(int newSurfaceMinimumWidth READ newSurfaceMinimumWidth WRITE setNewSurfaceMinimumWidth NOTIFY newSurfaceMinimumWidthChanged)
@@ -51,12 +51,12 @@ public:
     static SurfaceManager *instance();
 
     // SurfaceManagerInterface
-    void raise(unity::shell::application::MirSurfaceInterface *surface) override;
-    void activate(unity::shell::application::MirSurfaceInterface *surface) override;
+    void raise(lomiri::shell::application::MirSurfaceInterface *surface) override;
+    void activate(lomiri::shell::application::MirSurfaceInterface *surface) override;
 
     void forEachSurfaceInWorkspace(const std::shared_ptr<miral::Workspace> &workspace,
-                                   const std::function<void(unity::shell::application::MirSurfaceInterface*)> &callback) override;
-    void moveSurfaceToWorkspace(unity::shell::application::MirSurfaceInterface* surface,
+                                   const std::function<void(lomiri::shell::application::MirSurfaceInterface*)> &callback) override;
+    void moveSurfaceToWorkspace(lomiri::shell::application::MirSurfaceInterface* surface,
                                 const std::shared_ptr<miral::Workspace> &workspace) override;
     void moveWorkspaceContentToWorkspace(const std::shared_ptr<miral::Workspace> &to,
                                          const std::shared_ptr<miral::Workspace> &from) override;
@@ -69,7 +69,7 @@ public:
                                   const QUrl &qmlFilePath = QUrl());
 
 
-    void notifySurfaceCreated(unity::shell::application::MirSurfaceInterface *);
+    void notifySurfaceCreated(lomiri::shell::application::MirSurfaceInterface *);
 
     int newSurfaceMinimumWidth() const { return m_newSurfaceMinimumWidth; }
     void setNewSurfaceMinimumWidth(int value);
@@ -106,12 +106,12 @@ private Q_SLOTS:
     void onSurfaceDestroyed(MirSurface *surface);
 
 private:
-    void doRaise(unity::shell::application::MirSurfaceInterface *surface);
+    void doRaise(lomiri::shell::application::MirSurfaceInterface *surface);
     void focusFirstAvailableSurface();
     void registerSurface(MirSurface *surface);
-    unity::shell::application::MirSurfaceInterface* surfaceFor(const miral::Window &window) const;
-    QVector<unity::shell::application::MirSurfaceInterface*> surfacesFor(const std::vector<miral::Window> &windows) const;
-    miral::Window windowFor(unity::shell::application::MirSurfaceInterface* surface) const;
+    lomiri::shell::application::MirSurfaceInterface* surfaceFor(const miral::Window &window) const;
+    QVector<lomiri::shell::application::MirSurfaceInterface*> surfacesFor(const std::vector<miral::Window> &windows) const;
+    miral::Window windowFor(lomiri::shell::application::MirSurfaceInterface* surface) const;
 
     static SurfaceManager *m_instance;
 
@@ -127,8 +127,8 @@ private:
 
     QList<MirSurface*> m_surfaces;
 
-    QHash<WindowWrapper, unity::shell::application::MirSurfaceInterface*> m_windowToSurface;
-    QHash<unity::shell::application::MirSurfaceInterface*, WindowWrapper> m_surfaceToWindow;
+    QHash<WindowWrapper, lomiri::shell::application::MirSurfaceInterface*> m_windowToSurface;
+    QHash<lomiri::shell::application::MirSurfaceInterface*, WindowWrapper> m_surfaceToWindow;
 
     VirtualKeyboard *m_virtualKeyboard{nullptr};
 };

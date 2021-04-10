@@ -54,9 +54,9 @@ quick_good_pat = re.compile(r'.*import QtQuick 2\.4.*$')
 quick_layouts_good_pat = re.compile(r'.*import QtQuick.Layouts 1\.1.*$')
 quick_window_good_pat = re.compile(r'.*import QtQuick.Window 2\.2.*$')
 
-# Ubuntu Components patterns
-ubuntu_components_pat = re.compile(r'.*import Ubuntu.Components.*')
-ubuntu_good_components_pat = re.compile(r'.*import Ubuntu.Components.*1\.3.*')
+# Lomiri.Components patterns
+ubuntu_components_pat = re.compile(r'.*import Lomiri.Components.*')
+ubuntu_good_components_pat = re.compile(r'.*import Lomiri.Components.*1\.3.*')
 
 def scan_for_bad_import(file_path, all_pat, good_pats):
     errors = []

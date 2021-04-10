@@ -35,7 +35,7 @@ public:
     bool has_messages;
     QString session;
     QString infographic;
-    uid_t uid;
+    pid_t uid;
 };
 
 class UsersModelPrivate

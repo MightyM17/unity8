@@ -31,7 +31,7 @@
 #define DEBUG_MSG(params) ((void)0)
 #endif
 
-namespace unityapi = unity::shell::application;
+namespace lomiriapi = lomiri::shell::application;
 
 uint qHash(const WindowWrapper &key, uint)
 {
@@ -93,7 +93,7 @@ MirSurfaceInterface *SurfaceManager::surfaceFor(const miral::Window& window) con
 
 QVector<MirSurfaceInterface*> SurfaceManager::surfacesFor(const std::vector<miral::Window> &windows) const
 {
-    QVector<unityapi::MirSurfaceInterface*> surfaces;
+    QVector<lomiriapi::MirSurfaceInterface*> surfaces;
     for (size_t i = 0; i < windows.size(); i++) {
         auto mirSurface = surfaceFor(windows[i]);
         if (mirSurface) {
@@ -159,7 +159,7 @@ void SurfaceManager::registerSurface(MirSurface *surface)
     });
 }
 
-void SurfaceManager::notifySurfaceCreated(unityapi::MirSurfaceInterface *surface)
+void SurfaceManager::notifySurfaceCreated(lomiriapi::MirSurfaceInterface *surface)
 {
     if (Q_UNLIKELY(!m_surfaceToWindow.contains(surface))) {
         Q_EMIT surfaceCreated(surface);
@@ -217,7 +217,7 @@ void SurfaceManager::setNewSurfaceHeightIncrement(int value)
     }
 }
 
-void SurfaceManager::raise(unityapi::MirSurfaceInterface *surface)
+void SurfaceManager::raise(lomiriapi::MirSurfaceInterface *surface)
 {
     if (m_underModification)
         return;
@@ -233,7 +233,7 @@ void SurfaceManager::raise(unityapi::MirSurfaceInterface *surface)
     DEBUG_MSG("("<<surface<<") ended");
 }
 
-void SurfaceManager::doRaise(unityapi::MirSurfaceInterface *apiSurface)
+void SurfaceManager::doRaise(lomiriapi::MirSurfaceInterface *apiSurface)
 {
     auto surface = static_cast<MirSurface*>(apiSurface);
     int index = m_surfaces.indexOf(surface);
@@ -243,7 +243,7 @@ void SurfaceManager::doRaise(unityapi::MirSurfaceInterface *apiSurface)
     Q_EMIT surfacesRaised({surface});
 }
 
-void SurfaceManager::activate(unityapi::MirSurfaceInterface *apiSurface)
+void SurfaceManager::activate(lomiriapi::MirSurfaceInterface *apiSurface)
 {
     auto surface = static_cast<MirSurface*>(apiSurface);
 
@@ -277,7 +277,7 @@ void SurfaceManager::activate(unityapi::MirSurfaceInterface *apiSurface)
 }
 
 void SurfaceManager::forEachSurfaceInWorkspace(const std::shared_ptr<miral::Workspace> &workspace,
-                                               const std::function<void(unity::shell::application::MirSurfaceInterface*)> &callback)
+                                               const std::function<void(lomiri::shell::application::MirSurfaceInterface*)> &callback)
 {
     WindowManagementPolicy::instance()->forEachWindowInWorkspace(workspace, [&](const miral::Window &window) {
         auto surface = surfaceFor(window);
@@ -287,7 +287,7 @@ void SurfaceManager::forEachSurfaceInWorkspace(const std::shared_ptr<miral::Work
     });
 }
 
-void SurfaceManager::moveSurfaceToWorkspace(unity::shell::application::MirSurfaceInterface* surface,
+void SurfaceManager::moveSurfaceToWorkspace(lomiri::shell::application::MirSurfaceInterface* surface,
                                             const std::shared_ptr<miral::Workspace> &workspace)
 {
     auto window = windowFor(surface);

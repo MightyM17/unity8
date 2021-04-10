@@ -20,7 +20,7 @@ import ".."
 import "../../../qml/Greeter"
 import LightDMController 0.1
 import LightDM.FullLightDM 0.1 as LightDM
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Unity.Test 0.1 as UT
 
 StyledItem {
@@ -30,7 +30,7 @@ StyledItem {
     height: units.gu(80)
     focus: true
 
-    theme.name: "Ubuntu.Components.Themes.Ambiance"
+    theme.name: "Lomiri.Components.Themes.Ambiance"
 
     Row {
         anchors.fill: parent

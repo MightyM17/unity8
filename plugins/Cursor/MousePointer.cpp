@@ -21,7 +21,7 @@
 #include <QQuickWindow>
 
 // Unity API
-#include <unity/shell/application/MirPlatformCursor.h>
+#include <lomiri/shell/application/MirPlatformCursor.h>
 
 MousePointer::MousePointer(QQuickItem *parent)
     : MirMousePointerInterface(parent)

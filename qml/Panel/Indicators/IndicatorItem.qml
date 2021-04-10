@@ -15,7 +15,7 @@
  */
 
 import QtQuick 2.4
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Ubuntu.Settings.Components 0.1
 import QMenuModel 0.1
 
@@ -84,7 +84,7 @@ IndicatorDelegate {
             fontSize: "medium"
             font.weight: Font.Light
             color: root.color
-            Behavior on color { ColorAnimation { duration: UbuntuAnimation.FastDuration; easing: UbuntuAnimation.StandardEasing } }
+            Behavior on color { ColorAnimation { duration: LomiriAnimation.FastDuration; easing: LomiriAnimation.StandardEasing } }
         }
 
         Item {
@@ -116,7 +116,7 @@ IndicatorDelegate {
                         width: implicitWidth > 0 && implicitHeight > 0 ? (implicitWidth / implicitHeight * height) : implicitWidth;
                         source: modelData
                         color: root.color
-                        Behavior on color { ColorAnimation { duration: UbuntuAnimation.FastDuration; easing: UbuntuAnimation.StandardEasing } }
+                        Behavior on color { ColorAnimation { duration: LomiriAnimation.FastDuration; easing: LomiriAnimation.StandardEasing } }
                     }
                 }
             }
@@ -138,7 +138,7 @@ IndicatorDelegate {
             fontSize: "medium"
             font.weight: Font.Light
             color: root.color
-            Behavior on color { ColorAnimation { duration: UbuntuAnimation.FastDuration; easing: UbuntuAnimation.StandardEasing } }
+            Behavior on color { ColorAnimation { duration: LomiriAnimation.FastDuration; easing: LomiriAnimation.StandardEasing } }
         }
     }
 
@@ -157,7 +157,7 @@ IndicatorDelegate {
         horizontalAlignment: Text.AlignHCenter
         opacity: 0
         color: root.color
-        Behavior on color { ColorAnimation { duration: UbuntuAnimation.FastDuration; easing: UbuntuAnimation.StandardEasing } }
+        Behavior on color { ColorAnimation { duration: LomiriAnimation.FastDuration; easing: LomiriAnimation.StandardEasing } }
     }
 
     StateGroup {
@@ -235,12 +235,12 @@ IndicatorDelegate {
                 PropertyAction { target: d; property: "useFallbackIcon" }
                 AnchorAnimation {
                     targets: [ mainItems, iconsItem, leftLabelItem, rightLabelItem ]
-                    duration: UbuntuAnimation.SnapDuration; easing: UbuntuAnimation.StandardEasing
+                    duration: LomiriAnimation.SnapDuration; easing: LomiriAnimation.StandardEasing
                 }
                 PropertyAnimation {
                     targets: [ root, mainItems, iconsItem, leftLabelItem, rightLabelItem, indicatorName ]
                     properties: "width, opacity, anchors.verticalCenterOffset";
-                    duration: UbuntuAnimation.SnapDuration; easing: UbuntuAnimation.StandardEasing
+                    duration: LomiriAnimation.SnapDuration; easing: LomiriAnimation.StandardEasing
                 }
             }
         ]

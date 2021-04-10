@@ -16,7 +16,7 @@
  */
 
 import QtQuick 2.4
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Wizard 0.1
 import ".." as LocalComponents
 
@@ -45,7 +45,7 @@ LocalComponents.Page {
         ParallelAnimation {
             AnchorAnimation {
                 targets: [bgImage, column]
-                duration: UbuntuAnimation.SlowDuration
+                duration: LomiriAnimation.SlowDuration
                 easing.type: Easing.OutCirc
             }
             NumberAnimation {
@@ -53,7 +53,7 @@ LocalComponents.Page {
                 property: "opacity"
                 from: 0
                 to: 1
-                duration: UbuntuAnimation.SlowDuration
+                duration: LomiriAnimation.SlowDuration
                 easing.type: Easing.OutCirc
             }
         }

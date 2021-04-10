@@ -24,7 +24,7 @@ import GSettings 1.0
 import "Components"
 import "Rotation"
 // Workaround https://bugs.launchpad.net/ubuntu/+source/unity8/+bug/1473471
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 
 Item {
     id: root

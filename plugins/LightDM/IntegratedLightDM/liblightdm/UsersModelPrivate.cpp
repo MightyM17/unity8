@@ -38,7 +38,7 @@ UsersModelPrivate::UsersModelPrivate(UsersModel* parent)
 {
     QFileInfo demoFile(QDir::homePath() + "/.unity8-greeter-demo");
     QString currentUser = g_get_user_name();
-    uid_t currentUid = getuid();
+    pid_t currentUid = getuid();
 
     if (demoFile.exists()) {
         QSettings settings(demoFile.filePath(), QSettings::NativeFormat);

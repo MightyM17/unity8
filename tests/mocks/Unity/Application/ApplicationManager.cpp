@@ -40,7 +40,7 @@
 #define XDEBUG_MSG(params) ((void)0)
 #endif
 
-namespace unityapi = unity::shell::application;
+namespace lomiriapi = lomiri::shell::application;
 
 
 ApplicationManager::ApplicationManager(QObject *parent)
@@ -93,7 +93,7 @@ QVariant ApplicationManager::data(const QModelIndex& index, int role) const {
     case RoleExemptFromLifecycle:
         return app->exemptFromLifecycle();
     case RoleApplication:
-        return QVariant::fromValue(static_cast<unityapi::ApplicationInfoInterface*>(app));
+        return QVariant::fromValue(static_cast<lomiriapi::ApplicationInfoInterface*>(app));
     default:
         return QVariant();
     }
@@ -114,7 +114,7 @@ ApplicationInfo *ApplicationManager::findApplication(const QString &appId) const
     return nullptr;
 }
 
-unityapi::ApplicationInfoInterface *ApplicationManager::findApplicationWithSurface(unityapi::MirSurfaceInterface* surface) const
+lomiriapi::ApplicationInfoInterface *ApplicationManager::findApplicationWithSurface(lomiriapi::MirSurfaceInterface* surface) const
 {
     for (ApplicationInfo *app : m_runningApplications) {
         auto surfaceList = static_cast<MirSurfaceListModel*>(app->surfaceList());

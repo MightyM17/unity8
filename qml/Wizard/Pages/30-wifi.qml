@@ -17,7 +17,7 @@
 import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import QMenuModel 0.1 as QMenuModel
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Wizard 0.1
 import Ubuntu.Connectivity 1.0
 import Ubuntu.SystemSettings.Update 1.0

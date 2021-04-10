@@ -21,14 +21,14 @@
 #include "asadapter.h"
 #include "ualwrapper.h"
 
-#include <unity/shell/application/ApplicationInfoInterface.h>
-#include <unity/shell/application/MirSurfaceListInterface.h>
-#include <unity/shell/application/MirSurfaceInterface.h>
+#include <lomiri/shell/application/ApplicationInfoInterface.h>
+#include <lomiri/shell/application/MirSurfaceListInterface.h>
+#include <lomiri/shell/application/MirSurfaceInterface.h>
 
 #include <QDesktopServices>
 #include <QDebug>
 
-using namespace unity::shell::application;
+using namespace lomiri::shell::application;
 
 LauncherModel::LauncherModel(QObject *parent):
     LauncherModelInterface(parent),
@@ -97,7 +97,7 @@ QVariant LauncherModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-unity::shell::launcher::LauncherItemInterface *LauncherModel::get(int index) const
+lomiri::shell::launcher::LauncherItemInterface *LauncherModel::get(int index) const
 {
     if (index < 0 || index >= m_list.count()) {
         return 0;
@@ -254,7 +254,7 @@ ApplicationManagerInterface *LauncherModel::applicationManager() const
     return m_appManager;
 }
 
-void LauncherModel::setApplicationManager(unity::shell::application::ApplicationManagerInterface *appManager)
+void LauncherModel::setApplicationManager(lomiri::shell::application::ApplicationManagerInterface *appManager)
 {
     // Is there already another appmanager set?
     if (m_appManager) {
@@ -545,17 +545,12 @@ void LauncherModel::applicationAdded(const QModelIndex &parent, int row)
         item->setRecent(true);
         item->setRunning(true);
         item->setFocused(app->focused());
-
-        if (app->visible()) {
-            beginInsertRows(QModelIndex(), m_list.count(), m_list.count());
-            m_list.append(item);
-            endInsertRows();
-        } else {
-            m_hiddenList.append(item);
-        }
+        
+        beginInsertRows(QModelIndex(), m_list.count(), m_list.count());
+        m_list.append(item);
+        endInsertRows();
     }
 
-    connect(app, &ApplicationInfoInterface::visibleChanged, this, &LauncherModel::onVisibleChanged);
     connect(app, &ApplicationInfoInterface::surfaceCountChanged, this, &LauncherModel::updateSurfaceList);
     m_asAdapter->syncItems(m_list);
     Q_EMIT dataChanged(index(itemIndex), index(itemIndex), {RoleRunning});
@@ -642,7 +637,6 @@ void LauncherModel::applicationRemoved(const QModelIndex &parent, int row)
         return;
     }
 
-    disconnect(app, &ApplicationInfoInterface::visibleChanged, this, &LauncherModel::onVisibleChanged);
     disconnect(app, &ApplicationInfoInterface::surfaceCountChanged, this, &LauncherModel::updateSurfaceList);
 
     if (appIndex != -1) {
