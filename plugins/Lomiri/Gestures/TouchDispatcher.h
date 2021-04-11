@@ -17,7 +17,7 @@
 #ifndef UBUNTU_TOUCH_DISPATCHER_H
 #define UBUNTU_TOUCH_DISPATCHER_H
 
-#include "LomiriGesturesQmlGlobal.h"
+#include "UbuntuGesturesQmlGlobal.h"
 
 #include <QPointer>
 #include <QQuickItem>
@@ -29,7 +29,7 @@
    Also takes care of synthesizing mouse events in case the target
    doesn't work with touch events.
  */
-class LOMIRIGESTURESQML_EXPORT TouchDispatcher {
+class UBUNTUGESTURESQML_EXPORT TouchDispatcher {
 public:
     TouchDispatcher();
 

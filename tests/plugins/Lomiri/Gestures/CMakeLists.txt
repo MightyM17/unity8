@@ -12,7 +12,7 @@ include_directories(
 )
 
 include_directories(
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri.Gestures
+    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Gestures
     ${CMAKE_CURRENT_BINARY_DIR}
     )
 
@@ -23,7 +23,7 @@ macro(build_gesture_test CLASSNAME)
         LomiriGesturesQml ${LOMIRIGESTURES_LIBRARIES}
     )
     install(TARGETS ${CLASSNAME}TestExec
-        DESTINATION "${SHELL_PRIVATE_LIBDIR}/tests/plugins/Lomiri.Gestures"
+        DESTINATION "${SHELL_PRIVATE_LIBDIR}/tests/plugins/Lomiri/Gestures"
     )
     # To find libLomiriGestures.so
     set_target_properties(${CLASSNAME}TestExec PROPERTIES INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SHELL_PRIVATE_LIBDIR}")
@@ -37,7 +37,7 @@ set(UNITY_IMPORT_PATHS
 macro(add_gesture_unit_test CLASSNAME)
     build_gesture_test(${CLASSNAME})
     add_unity8_unittest(${CLASSNAME} ${CLASSNAME}TestExec
-        ENVIRONMENT LD_LIBRARY_PATH=${UNITY_PLUGINPATH}/Lomiri.Gestures
+        ENVIRONMENT LD_LIBRARY_PATH=${UNITY_PLUGINPATH}/Lomiri/Gestures
         ${ARGN}
     )
 endmacro()
@@ -45,7 +45,7 @@ endmacro()
 macro(add_gesture_ui_test CLASSNAME)
     build_gesture_test(${CLASSNAME})
     add_unity8_uitest(${CLASSNAME} ${CLASSNAME}TestExec
-        ENVIRONMENT LD_LIBRARY_PATH=${UNITY_PLUGINPATH}/Lomiri.Gestures
+        ENVIRONMENT LD_LIBRARY_PATH=${UNITY_PLUGINPATH}/Lomiri/Gestures
         ${ARGN}
     )
     add_manual_qml_test(. ${CLASSNAME} IMPORT_PATHS ${UNITY_IMPORT_PATHS})

@@ -545,7 +545,6 @@ void LauncherModel::applicationAdded(const QModelIndex &parent, int row)
         item->setRecent(true);
         item->setRunning(true);
         item->setFocused(app->focused());
-        
         beginInsertRows(QModelIndex(), m_list.count(), m_list.count());
         m_list.append(item);
         endInsertRows();

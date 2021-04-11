@@ -27,14 +27,14 @@ Item {
     // For testing
     property var screen: Screen
     property var orientationLock: OrientationLock
-    property alias overrideDeviceName: deviceConfiguration.overrideName
+    //property alias overrideDeviceName: deviceConfiguration.overrideName FIXME
 
     property bool oskEnabled: false
 
-    property alias deviceConfiguration: _deviceConfiguration
+    /* property alias deviceConfiguration: _deviceConfiguration
     DeviceConfiguration {
         id: _deviceConfiguration
-    }
+    } */
 
     Item {
         id: contentContainer
@@ -43,9 +43,9 @@ Item {
         height: rotation == 90 || rotation == 270 ? parent.width : parent.height
         width: rotation == 90 || rotation == 270 ? parent.height : parent.width
 
-        property int savedOrientation: deviceConfiguration.primaryOrientation == deviceConfiguration.useNativeOrientation
+	/* property int savedOrientation: deviceConfiguration.primaryOrientation == deviceConfiguration.useNativeOrientation
                                        ? (root.width > root.height ? Qt.LandscapeOrientation : Qt.PortraitOrientation)
-                                       : deviceConfiguration.primaryOrientation
+                                       : deviceConfiguration.primaryOrientation */
 
         rotation: {
             var usedOrientation = root.screen.orientation;

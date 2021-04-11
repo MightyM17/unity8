@@ -20,11 +20,11 @@
 #include <QObject>
 #include <QPointF>
 
-#include "LomiriGesturesQmlGlobal.h"
+#include "UbuntuGesturesQmlGlobal.h"
 
 class QQuickItem;
 
-class LOMIRIGESTURESQML_EXPORT MouseEventGenerator : public QObject {
+class UBUNTUGESTURESQML_EXPORT MouseEventGenerator : public QObject {
     Q_OBJECT
     Q_PROPERTY(QQuickItem* targetItem MEMBER m_targetItem NOTIFY targetItemChanged)
 

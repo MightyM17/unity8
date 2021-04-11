@@ -1502,7 +1502,6 @@ Rectangle {
 
             // reload our test subject to get it in a fresh state once again
             var orientedShell = createTemporaryObject(shellComponent, shellRect);
-
             removeTimeConstraintsFromSwipeAreas(orientedShell);
 
             var shell = findChild(orientedShell, "shell");

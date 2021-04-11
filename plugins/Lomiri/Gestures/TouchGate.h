@@ -17,7 +17,7 @@
 #ifndef UBUNTU_TOUCH_GATE_H
 #define UBUNTU_TOUCH_GATE_H
 
-#include "LomiriGesturesQmlGlobal.h"
+#include "UbuntuGesturesQmlGlobal.h"
 #include "TouchDispatcher.h"
 #include <LomiriGestures/lomirigesturesglobal.h>
 
@@ -39,7 +39,7 @@ UG_FORWARD_DECLARE_CLASS(TouchOwnershipEvent)
   touch canceling. By having a TouchGate in front of them you guarantee that only owned touches (i.e.,
   touches that won't be canceled later) reaches them.
  */
-class LOMIRIGESTURESQML_EXPORT TouchGate : public QQuickItem {
+class UBUNTUGESTURESQML_EXPORT TouchGate : public QQuickItem {
     Q_OBJECT
 
     // Item that's going to receive the touch events that make it through the gate.

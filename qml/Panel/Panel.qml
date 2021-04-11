@@ -17,7 +17,7 @@
 
 import QtQuick 2.4
 import Lomiri.Components 1.3
-import Ubuntu.Layouts 1.0
+import Lomiri.Layouts 1.0
 import Unity.Application 0.1
 import Unity.Indicators 0.1
 import Utils 0.1

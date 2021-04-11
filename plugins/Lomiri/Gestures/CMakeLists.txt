@@ -2,14 +2,14 @@
 remove_definitions(-DQT_NO_KEYWORDS)
 
 set(LomiriGesturesQml_SOURCES
-    plugin.cpp
     AxisVelocityCalculator.cpp
+    TouchGestureArea.cpp
+    plugin.cpp
     Direction.cpp
     MouseEventGenerator.cpp
     PressedOutsideNotifier.cpp
     TouchDispatcher.cpp
     TouchGate.cpp
-    TouchGestureArea.cpp
 )
 
 pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)
@@ -41,4 +41,4 @@ include_directories(
     ${Qt5V8_PRIVATE_INCLUDE_DIR}
 )
 
-add_unity8_plugin(Lomiri.Gestures 0.1 Lomiri.Gestures TARGETS LomiriGesturesQml)
+add_unity8_plugin(Lomiri.Gestures 0.1 Lomiri/Gestures TARGETS LomiriGesturesQml)

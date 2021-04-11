@@ -17,7 +17,7 @@
 #ifndef TOUCHGESTUREAREA_H
 #define TOUCHGESTUREAREA_H
 
-#include "LomiriGesturesQmlGlobal.h"
+#include "UbuntuGesturesQmlGlobal.h"
 
 #include <QQuickItem>
 
@@ -111,7 +111,7 @@ private:
  This way we can use the component in conjuntion with the directional drag area to compete for ownwership
  or gestures; unlike the MultiPointTouchArea.
  */
-class LOMIRIGESTURESQML_EXPORT TouchGestureArea : public QQuickItem
+class UBUNTUGESTURESQML_EXPORT TouchGestureArea : public QQuickItem
 {
     Q_OBJECT
 

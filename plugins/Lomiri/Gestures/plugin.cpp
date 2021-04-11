@@ -30,7 +30,7 @@ static QObject* directionSingleton(QQmlEngine* engine, QJSEngine* scriptEngine) 
   return new Direction;
 }
 
-void LomiriGesturesQmlPlugin::registerTypes(const char *uri)
+void UbuntuGesturesQmlPlugin::registerTypes(const char *uri)
 {
     qmlRegisterSingletonType<Direction>(uri, 0, 1, "Direction", directionSingleton);
     qmlRegisterType<AxisVelocityCalculator>(uri, 0, 1, "AxisVelocityCalculator");

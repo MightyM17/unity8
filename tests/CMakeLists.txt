@@ -133,7 +133,7 @@ endfunction()
 
 # used to make dbus adaptor classes from xml to mock system services
 if(DEFINED ENV{DEB_BUILD_MULTIARCH})
-  set(QDBUSXML2CPP_EXECUTABLE "/usr/lib/$ENV{DEB_BUILD_MULTIARCH}/qt5/bin/qdbusxml2cpp")
+  set(QDBUSXML2CPP_EXECUTABLE "/usr/lib/$ENV{DEB_BUILD_MULTIARCH}/qt5/bin/qdbusxml2cpp-qt5")
 else()
   FIND_PROGRAM(QDBUSXML2CPP_EXECUTABLE qdbusxml2cpp-qt5)
 endif()
