@@ -108,8 +108,11 @@ void UInput::removeMouse()
 void UInput::moveMouse(int dx, int dy)
 {
     struct input_event event;
+    struct timeval tval;
     memset(&event, 0, sizeof(event));
-    clock_gettime(CLOCK_MONOTONIC, (timespec*)&event.time);
+    clock_gettime(CLOCK_MONOTONIC, (timespec*)&tval);
+    event.input_event_usec = tval.tv_usec;
+    event.input_event_sec = tval.tv_sec;
     event.type = EV_REL;
     event.code = REL_X;
     event.value = dx;
@@ -138,8 +141,11 @@ void UInput::releaseMouse(Button button)
 void UInput::scrollMouse(int dh, int dv)
 {
     struct input_event event;
+    struct timeval tval;
     memset(&event, 0, sizeof(event));
-    clock_gettime(CLOCK_MONOTONIC, (timespec*)&event.time);
+    clock_gettime(CLOCK_MONOTONIC, (timespec*)&tval);
+    event.input_event_usec = tval.tv_usec;
+    event.input_event_sec = tval.tv_sec;
     event.type = EV_REL;
     event.code = REL_HWHEEL;
     event.value = dh;
@@ -158,8 +164,11 @@ void UInput::scrollMouse(int dh, int dv)
 void UInput::injectMouse(Button button, int down)
 {
     struct input_event event;
+    struct timeval tval;
     memset(&event, 0, sizeof(event));
-    clock_gettime(CLOCK_MONOTONIC, (timespec*)&event.time);
+    clock_gettime(CLOCK_MONOTONIC, (timespec*)&tval);
+    event.input_event_usec = tval.tv_usec;
+    event.input_event_sec = tval.tv_sec;
     event.type = EV_KEY;
     switch (button) {
     case ButtonLeft:
